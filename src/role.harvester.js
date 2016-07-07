@@ -9,9 +9,9 @@ harvester.loop = function (creep) {
   if (creep.carry.energy < creep.carryCapacity) {
     resources.gather(creep);
   } else if (spawn.energy < spawn.energyCapacity) {
-    if (creep.transfer(spawn, RESOURCE_ENERGY) !== ERR_NOT_IN_RANGE) return;
-
-    creep.moveTo(Game.spawns.Spawn1);
+    if (creep.transfer(spawn, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+      creep.moveTo(Game.spawns.Spawn1);
+    }
   }
 };
 
