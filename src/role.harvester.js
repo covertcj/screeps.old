@@ -1,29 +1,18 @@
-var harvester = Object.freeze({
-  loop: function (creep) {
-    var sources = creep.room.find(FIND_SOURCES);
-    if (!sources) return;
+var roleBuilder = require('roleBuilder'),
+    resources = require('resources');
 
-    if (creep.carry.energy < creep.carryCapacity) {
-      if (creep.harvest(sources[0]) !== ERR_NOT_IN_RANGE) return;
+var harvester = roleBuilder.build('harvester');
 
-      creep.moveTo(sources[0]);
-    } else if (Game.spawns.Spawn1.energy < Game.spawns.Spawn1.energyCapacity) {
-      if (creep.transfer(Game.spawns.Spawn1, RESOURCE_ENERGY) !== ERR_NOT_IN_RANGE) return;
+harvester.loop = function (creep) {
+  var spawn = Game.spawns.Spawn1;
 
-      creep.moveTo(Game.spawns.Spawn1);
-    }
-  },
+  if (creep.carry.energy < creep.carryCapacity) {
+    resources.gather(creep);
+  } else if (spawn.energy < spawn.energyCapacity) {
+    if (creep.transfer(spawn, RESOURCE_ENERGY) !== ERR_NOT_IN_RANGE) return;
 
-  create: function (spawn) {
-    console.log('Creating a new harvester: (' + spawn.name + ',' + newHarvester + ')');
-    var newHarvester = spawn.createCreep([MOVE, CARRY, WORK], undefined, { role: 'harvester' });
-  },
+    creep.moveTo(Game.spawns.Spawn1);
+  }
+};
 
-  get: function (creeps) {
-    return _.filter(Game.creeps, (c) => c.memory.role === this.type);
-  },
-
-  type: 'harvester'
-});
-
-module.exports = harvester;
+module.exports = Object.freeze(harvester);
