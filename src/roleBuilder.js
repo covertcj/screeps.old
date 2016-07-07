@@ -4,8 +4,10 @@ var builder = Object.freeze({
       spawn: function (spawner, parts) {
         parts = parts || [MOVE, CARRY, WORK];
 
-        var newHarvester = spawner.createCreep(parts, undefined, { role });
-        console.log('Spawning a new ' + role + ': (' + spawner.name + ',' + newHarvester + ')');
+        if (spawner.canCreateCreep(parts) === OK) {
+          var newHarvester = spawner.createCreep(parts, undefined, { role });
+          console.log('Spawning a new ' + role + ': (' + spawner.name + ',' + newHarvester + ')');
+        }
 
         return newHarvester;
       },
