@@ -8,8 +8,8 @@ upgrader.loop = function (creep) {
       resources.gather(creep);
     } else {
       var controller = creep.room.controller;
-      if (creep.transfer(controller, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-        creep.moveTo(Game.spawns.Spawn1);
+      if (creep.upgradeController(controller, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+        creep.moveTo(controller);
       }
     }
 }
