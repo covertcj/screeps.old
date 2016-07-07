@@ -1,5 +1,6 @@
 var harvesterRole = require('role.harvester'),
-    upgraderRole  = require('role.upgrader');
+    upgraderRole  = require('role.upgrader')
+    builderRole  = require('role.builder');
 
 function spawnAndProcess(role, minCreeps) {
   var creeps = role.get(Game.creeps);
