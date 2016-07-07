@@ -13,7 +13,7 @@ builder.loop = function (creep) {
   }
 
   if (creep.memory.building) {
-    var targets = creep.room.find(FIND_CONSTRUCTION_SITES, s => s.structureType !== STRUCTURE_ROAD);
+    var targets = creep.room.find(FIND_CONSTRUCTION_SITES, { filter: s => s.structureType !== STRUCTURE_ROAD });
     if (!targets.length) {
       targets = creep.room.find(FIND_CONSTRUCTION_SITES);
       if (!targets.length) return;
