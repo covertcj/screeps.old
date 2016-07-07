@@ -1,4 +1,5 @@
-var harvesterRole = require('role.harvester');
+var harvesterRole = require('role.harvester'),
+    upgraderRole  = require('role.upgrader');
 
 var main = Object.freeze({
   loop: function () {

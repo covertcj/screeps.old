@@ -17,4 +17,4 @@ var builder = Object.freeze({
   }
 });
 
-module.exprts = builder;
+module.exports = builder;
