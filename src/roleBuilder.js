@@ -13,7 +13,7 @@ var builder = Object.freeze({
       get: function (creeps) {
         return _.filter(creeps, (c) => c.memory.role === role);
       }
-    });
+    };
   }
 });
 

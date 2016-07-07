@@ -8,6 +8,13 @@ var main = Object.freeze({
     }
 
     _.each(harvesters, harvesterRole.loop);
+
+    var upgraders = upgraderRole.get(Game.creeps);
+    if (upgraders < 1) {
+      upgraderRole.spawn(Game.spawns.Spawn1);
+    }
+
+    _.each(upgraders, upgraderRole.loop);
   }
 });
 
