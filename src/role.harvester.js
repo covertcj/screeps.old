@@ -17,7 +17,7 @@ var harvester = Object.freeze({
   create: function (spawn) {
     console.log('Creating a new harvester: (' + spawn.name + ',' + newHarvester + ')');
     var newHarvester = spawn.createCreep([MOVE, CARRY, WORK], undefined, { role: 'harvester' });
-  }
+  },
 
   get: function (creeps) {
     return _.filter(Game.creeps, (c) => c.memory.role === this.type);
