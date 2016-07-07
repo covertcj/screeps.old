@@ -9,7 +9,7 @@ var main = Object.freeze({
       console.log('Creating a new harvester: ' + newHarvester);
     }
 
-    _.each(harvester, harvesterRole.loop);
+    _.each(harvesters, harvesterRole.loop);
   }
 });
 
