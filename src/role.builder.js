@@ -18,9 +18,9 @@ builder.loop = function (creep) {
 
     if (creep.build(targets[0]) === ERR_NOT_IN_RANGE) {
       creep.moveTo(targets[0]);
-    } else {
-      resources.gather(creep);
     }
+  } else {
+    resources.gather(creep);
   }
 };
 
