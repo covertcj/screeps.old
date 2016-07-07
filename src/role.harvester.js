@@ -12,6 +12,8 @@ harvester.loop = function (creep) {
     if (creep.transfer(spawn, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
       creep.moveTo(Game.spawns.Spawn1);
     }
+  } else {
+    creep.moveTo(Game.spawns.Spawn1);
   }
 };
 
