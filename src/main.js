@@ -25,8 +25,8 @@ var main = Object.freeze({
     cleanMemory();
 
     spawnAndProcess(harvesterRole, 2);
-    spawnAndProcess(upgraderRole, 3);
-    spawnAndProcess(builderRole, 1);
+    spawnAndProcess(upgraderRole, 2);
+    spawnAndProcess(builderRole, 2);
   }
 });
 
