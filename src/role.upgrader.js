@@ -5,4 +5,4 @@ upgrader.loop = function (creep) {
 
 }
 
-module.exports = harvester;
+module.exports = upgrader;
