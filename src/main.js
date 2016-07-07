@@ -15,7 +15,7 @@ function spawnAndProcess(role, minCreeps) {
 var main = Object.freeze({
   loop: function () {
     spawnAndProcess(harvesterRole, 2);
-    spawnAndProcess(upgraderRole, 1);
+    spawnAndProcess(upgraderRole, 3);
     spawnAndProcess(builderRole, 1);
   }
 });

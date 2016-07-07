@@ -1,10 +1,11 @@
 var resources = Object.freeze({
   gather: function (creep) {
-    var sources = creep.room.find(FIND_SOURCES);
-    if (!sources || creep.carry.energy >= creep.carryCapacity) return;
+    //var sources = creep.room.find(FIND_SOURCES);
+    var source = creep.pos.findClosestByPath(FIND_SOURCES);
+    if (!source || creep.carry.energy >= creep.carryCapacity) return;
 
-    if (creep.harvest(sources[0]) === ERR_NOT_IN_RANGE) {
-      creep.moveTo(sources[0]);
+    if (creep.harvest(source) === ERR_NOT_IN_RANGE) {
+      creep.moveTo(source);
     }
   }
 });
