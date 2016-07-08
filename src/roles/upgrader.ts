@@ -1,24 +1,25 @@
-const roleName = 'harvester';
+const roleName = 'upgrader';
 
 export function loop(creep: Creep) {
-    if (creep.carry.energy < creep.carryCapacity) {
+    if (creep.memory.upgrading && creep.carry.energy === 0) {
+        creep.memory.upgrading = false;
+    }
+
+    if (!creep.memory.upgrading && creep.carry.energy === creep.carryCapacity) {
+        creep.memory.upgrading = true;
+    }
+
+    if (creep.memory.upgrading) {
+        let controller = creep.room.controller;
+        if (creep.upgradeController(controller) === ERR_NOT_IN_RANGE) {
+            creep.moveTo(controller);
+        }
+    } else {
         let source = <Source>creep.pos.findClosestByPath(FIND_SOURCES);
         if (!source) return;
 
         if (creep.harvest(source) === ERR_NOT_IN_RANGE) {
             creep.moveTo(source);
-        }
-    } else {
-        let targets = <Structure[]>creep.room.find(FIND_STRUCTURES, {
-            filter: (s: any) => (s.structureType === STRUCTURE_EXTENSION || s.structureType === STRUCTURE_SPAWN) &&
-                s.energy < s.energyCapacity
-        });
-
-        if (targets.length > 0) {
-            let target = targets[0];
-            if (creep.transfer(target, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-                creep.moveTo(target);
-            }
         }
     }
 }

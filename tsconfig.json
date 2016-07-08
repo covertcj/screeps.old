@@ -3,14 +3,8 @@
     "module": "commonjs",
     "target": "es5",
     "noResolve": false,
-    "noImplicitAny": false
-  },
-
-  "bundles": {
-    "main": {
-      "files": [
-        "./src/boot/main.ts"
-      ]
-    }
+    "noImplicitAny": true,
+    "outDir": "./dist/"
   }
 }
+

@@ -6,12 +6,7 @@ var https = require('https');
 var fs = require('fs');
 var secrets = require('./secrets.js');
 
-gulp.task('compile', function () {
-    return tsproject.src( './tsconfig.json')
-        .pipe(gulp.dest('./dist'));
-});
-
-gulp.task('upload-sim', ['compile'], function () {
+gulp.task('upload', function () {
     console.log("Starting upload");
     var email = secrets.email,
         password = secrets.password,
@@ -36,10 +31,6 @@ gulp.task('upload-sim', ['compile'], function () {
     req.end();
 });
 
-gulp.task('watch', function() {
-    gulp.watch('./src/**/*.ts', ['build']);
-});
+gulp.task('build', ['upload']);
 
-gulp.task('build', ['upload-sim']);
-
-gulp.task('default',['watch']);
+gulp.task('default',['upload']);
