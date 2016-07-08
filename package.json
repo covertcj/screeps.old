@@ -1,19 +1,22 @@
 {
-  "name": "screeps",
-  "version": "1.0.0",
-  "description": "My screeps scripts.",
-  "main": "index.js",
+  "name": "ScreepsTypescript",
+  "version": "0.0.0",
+  "description": "",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "./node_modules/.bin/tsd install",
+    "start": "./node_modules/.bin/gulp watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/covertcj/screeps.git"
+  "author": "",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "ts-loader": "^0.8.2",
+    "tsd": "~0.6.5",
+    "tsproject": "~1.2.0-rc.6",
+    "typescript": "^1.8.10"
   },
-  "author": "Christopher J. Covert",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/covertcj/screeps/issues"
-  },
-  "homepage": "https://github.com/covertcj/screeps#readme"
+  "dependencies": {
+    "screeps-typescript-declarations": "^1.1.1"
+  }
 }
