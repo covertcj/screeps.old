@@ -19,6 +19,8 @@ export function loop(creep: Creep) {
             if (creep.transfer(target, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
                 creep.moveTo(target);
             }
+        } else {
+            creep.moveTo(Game.spawns['Spawn1']);
         }
     }
 }
