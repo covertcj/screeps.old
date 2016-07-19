@@ -1,16 +1,16 @@
-/* eslint-disable */
+/* eslint-env node */
 
 module.exports = {
-    entry: "./src/main.js",
+    entry: './src/main.js',
     output: {
-        filename: "./dist/main.js",
-        libraryTarget: "commonjs2"
+        filename: './dist/main.js',
+        libraryTarget: 'commonjs'
     },
 
-    // devtool: "source-map",
+    // devtool: 'source-map',
 
     resolve: {
-        extensions: ["", ".js"]
+        extensions: ['', '.js']
     },
 
     module: {
