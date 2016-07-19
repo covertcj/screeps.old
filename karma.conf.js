@@ -13,14 +13,20 @@ module.exports = function (cfg) {
         plugins: [ 
             webpack,
             'karma-chrome-launcher',
+            'karma-babel-preprocessor',
             'karma-mocha'
         ],
 
         preprocessors: {
-            'specs/*.js': [ 'webpack' ],
-            'specs/**/*.js': [ 'webpack' ],
-            'src/*.js': [ 'webpack' ],
-            'src/**/*.js': [ 'webpack' ]
+            '../specs/*.js': [ 'babel' ],
+            '../specs/**/*.js': [ 'babel' ],
+            './dist/main.js': [ 'webpack' ],
+        },
+        babelPreprocessor: {
+            options: {
+                presets: [ 'es2015' ],
+                sourceMap: 'inline'
+            }
         },
 
         reporters: [ 'dots' ],
