@@ -1,5 +1,7 @@
+/* eslint-disable */
+
 module.exports = {
-    entry: "./src/boot/main.ts",
+    entry: "./src/main.js",
     output: {
         filename: "./dist/main.js",
         libraryTarget: "commonjs2"
@@ -8,17 +10,12 @@ module.exports = {
     // devtool: "source-map",
 
     resolve: {
-        extensions: ["", ".ts", ".js"]
+        extensions: ["", ".js"]
     },
 
     module: {
         loaders: [
-            { test: /\.ts$/, loader: "ts-loader" }
+            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
         ]
-
-        // preLoaders: [
-        //     // all output .js files will be re-processed and given source maps
-        //     { test: /\.js$/, loader: "source-map-loader" }
-        // ]
     }
 };

@@ -1,5 +1,7 @@
-npm install -g typescript webpack gulp
+```
+npm install -g webpack gulp eslint
 npm install
+```
 
 Building
 --------

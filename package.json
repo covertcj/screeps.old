@@ -1,22 +1,18 @@
 {
-  "name": "ScreepsTypescript",
+  "name": "screeps",
   "version": "0.0.0",
   "description": "",
-  "main": "gulpfile.js",
+  "main": "src/main.js",
   "scripts": {
-    "postinstall": "./node_modules/.bin/tsd install",
-    "start": "./node_modules/.bin/gulp watch"
+    "start": "webpack --watch",
+    "upload": "node ./scripts/upload.js"
   },
-  "author": "",
-  "license": "BSD-2-Clause",
+  "author": "Christopher J. Covert",
+  "license": "MIT",
   "devDependencies": {
-    "gulp": "~3.9.0",
-    "ts-loader": "^0.8.2",
-    "tsd": "~0.6.5",
-    "tsproject": "~1.2.0-rc.6",
-    "typescript": "^1.8.10"
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0"
   },
-  "dependencies": {
-    "screeps-typescript-declarations": "^4.0.2"
-  }
+  "dependencies": {}
 }
