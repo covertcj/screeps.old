@@ -1,7 +1,7 @@
-import { expect } from './specHelper.js';
+import test from 'tape';
 
-describe('myspec', function () {
-    it('should pass a simple test', function () {
-        expect(1).to.be(1);
-    });    
+test('myspec', function (t) {
+    t.plan(1);
+    
+    t.equal(1, 1);
 });

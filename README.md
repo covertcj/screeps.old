@@ -1,5 +1,5 @@
 ```
-npm install -g webpack gulp eslint karma-cli
+npm install -g webpack eslint testem
 npm install
 ```
 
